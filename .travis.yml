@@ -1,0 +1,13 @@
+# https://docs.travis-ci.com/user/customizing-the-build/
+
+sudo: false
+
+language: node_js
+
+node_js:
+  - "8"
+
+script:
+  - "node_modules/.bin/enb make specs"
+
+script: npm test
