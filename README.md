@@ -1,16 +1,14 @@
 # babel-plugin-es-to-ymodules
 
-[![travis](http://img.shields.io/travis/bem-contrib/babel-plugin-es-to-ymodules.svg?style=flat)](https://travis-ci.org/bem-contrib/babel-plugin-es-to-ymodules)
+Babel плагин трансформация ES2015 модулей в [YModules](https://bem.info/tools/bem/modules/). Основан на [transform-es2015-modules-commonjs](https://www.npmjs.com/package/babel-plugin-transform-es2015-modules-commonjs) и идеях [babel-plugin-bem](https://github.com/bem/babel-plugin-bem).
 
+[![npm](https://img.shields.io/npm/v/babel-plugin-es-to-ymodules.svg?style=flat)](https://www.npmjs.com/package/babel-plugin-es-to-ymodules) [![travis](http://img.shields.io/travis/bem-contrib/babel-plugin-es-to-ymodules.svg?style=flat)](https://travis-ci.org/bem-contrib/babel-plugin-es-to-ymodules) ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-Babel плагин трансформация ES2015 модулей в [YModules](https://bem.info/tools/bem/modules/)
-Основан на [transform-es2015-modules-commonjs](https://www.npmjs.com/package/babel-plugin-transform-es2015-modules-commonjs) и идеях
-[babel-plugin-bem](https://github.com/bem/babel-plugin-bem).
 ## Основные фичи
 - [x] Поддержка именнованного экcпорта
 - [x] Совместимость с текущими модулями
 - [x] Преобразование не `ym:*` вызова в обычный `require`
-- [x] Патчинг старых модулей на работу с ES2015 модулями 
+- [x] Патчинг старых модулей на работу с ES2015 модулями
 (Извлечение `default` значения)
 
 ## Зачем
@@ -22,9 +20,9 @@ Babel плагин трансформация ES2015 модулей в [YModules
 ## В планах
 - [ ] Использование нотации импортов из bem-import
 *не реализована, чтобы не вызывать путаницу*
-*Возможно будет с ограничениями* 
+*Возможно будет с ограничениями*
 - [ ] Технология для `enb` с транфсормацией модулей
-- [ ] Технология для `specs` с использованием трансформаций 
+- [ ] Технология для `specs` с использованием трансформаций
 
 
 ## Установка
@@ -54,7 +52,7 @@ babel --plugins=es-to-ymodules path/to/my/module.js
 - Модули собираются через [deps-файлы](https://ru.bem.info/platform/deps/)
 - Требует обкатки (по тестам то всё хорошо...)
 
-### 1. Декларация модуля 
+### 1. Декларация модуля
 **modules.define**
 ```js
 /** @module my-block */
@@ -70,8 +68,8 @@ export default bemDom.declBlock('my-block', {
 Аналогично
 
 ```js
-modules.define('my-block', 
-    ['i-bem-dom'], 
+modules.define('my-block',
+    ['i-bem-dom'],
     function(provide, bemDom) {
 
 provide(bemDom.declBlock('my-block', {
@@ -83,7 +81,7 @@ provide(bemDom.declBlock('my-block', {
 });
 ```
 
-### 3. Доопределение модуля 
+### 3. Доопределение модуля
 **modules.define**
 
 ```js
@@ -99,7 +97,7 @@ export default Button.declMod({ modName : 'type', modVal : 'link' }, {
 
 Аналогично
 ```js
-module.define('button', 
+module.define('button',
     function(provide, Button) {
 
 provide(Button.declMod({ modName : 'type', modVal : 'link' }, {
@@ -110,7 +108,7 @@ provide(Button.declMod({ modName : 'type', modVal : 'link' }, {
 
 });
 ```
-### 3. Обычное подключение 
+### 3. Обычное подключение
 **modules.require**
 
 ```js
@@ -139,7 +137,7 @@ modules.require('i-bem-dom', function(bemDom) {
 
 const mobx = require('mobx');
 
-}); 
+});
 ```
 
 Более подробные примеры можно [постмотреть в тестах](tests/fixtures).
