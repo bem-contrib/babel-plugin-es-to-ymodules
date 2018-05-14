@@ -1,9 +1,9 @@
-import pluginTester from 'babel-plugin-tester';
-import path from 'path'
-import plugin from '../src'
+const pluginTester = require('babel-plugin-tester')
+const path = require('path')
+const plugin = require('../lib')
 
 pluginTester({
-    plugin: plugin,
+    plugin: plugin.default,
     pluginName : 'es-to-ymodules',
     fixtures: path.join(__dirname, 'fixtures'),
     tests : [
