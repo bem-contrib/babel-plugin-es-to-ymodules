@@ -124,10 +124,7 @@ function getModuleName(path) {
         value = firstComment.node.value,
         matches = /module\s+([\w-]+)/.exec(value);
 
-    if(!matches) {
-        throw Error('Module name reqired in header comment');
-        return;
-    }
+    if(!matches) { return ''; }
 
     firstComment.remove();
 

@@ -13,5 +13,10 @@ pluginTester({
             snapshot : false,
             error : /Module name required/
         },
+        {
+            title : 'No thorw module name error, if plain ymodule',
+            code : '/** */\n modules.define',
+            snapshot : true
+        },
     ]
 });

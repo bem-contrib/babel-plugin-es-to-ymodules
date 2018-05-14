@@ -1,6 +1,6 @@
 # babel-plugin-es-to-ymodules
 
-Babel плагин трансформация ES2015 модулей в [YModules](https://bem.info/tools/bem/modules/). Основан на [transform-es2015-modules-commonjs](https://www.npmjs.com/package/babel-plugin-transform-es2015-modules-commonjs) и идеях [babel-plugin-bem](https://github.com/bem/babel-plugin-bem).
+Babel плагин трансформации ES2015 модулей в [YModules](https://bem.info/tools/bem/modules/). Основан на [transform-es2015-modules-commonjs](https://www.npmjs.com/package/babel-plugin-transform-es2015-modules-commonjs) и идеях [babel-plugin-bem](https://github.com/bem/babel-plugin-bem).
 
 [![npm](https://img.shields.io/npm/v/babel-plugin-es-to-ymodules.svg?style=flat)](https://www.npmjs.com/package/babel-plugin-es-to-ymodules) [![travis](http://img.shields.io/travis/bem-contrib/babel-plugin-es-to-ymodules.svg?style=flat)](https://travis-ci.org/bem-contrib/babel-plugin-es-to-ymodules) ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 

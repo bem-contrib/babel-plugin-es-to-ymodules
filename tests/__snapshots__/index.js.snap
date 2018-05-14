@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`es-to-ymodules No thorw module name error, if plain ymodule: No thorw module name error, if plain ymodule 1`] = `
+"
+/** */
+ modules.define
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+\\"use strict\\";
+
+/** */
+modules.define;
+"
+`;
