@@ -34,6 +34,22 @@ modules.define('a', (p, a) => {
 "
 `;
 
+exports[`es-to-ymodules Simple import: Simple import 1`] = `
+"
+import block from \\"m\\"
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+\\"use strict\\";
+
+var _m = require(\\"m\\");
+
+var _m2 = _interopRequireDefault(_m);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+"
+`;
+
 exports[`es-to-ymodules Skip BinaryExpression exports: Skip BinaryExpression exports 1`] = `
 "
 exports === 10

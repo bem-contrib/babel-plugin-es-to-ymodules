@@ -32,6 +32,11 @@ pluginTester({
             title : 'Skip BinaryExpression exports',
             code : 'exports === 10',
             snapshot : true
-        }
+        },
+        {
+            title : 'Simple import',
+            code : 'import block from "m"',
+            snapshot : true
+        },
     ]
 });
