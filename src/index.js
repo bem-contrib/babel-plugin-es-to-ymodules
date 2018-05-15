@@ -7,9 +7,21 @@ import transform from './transform'
 const commonVisitor = {
     ReferencedIdentifier(path) {
         const { node, scope  } = path;
+        const parentPath = path.parentPath;
+        const parentType = parentPath.node.type;
 
         const skipParents = ['UnaryExpression', 'BinaryExpression'];
-        if(skipParents.indexOf(path.parentPath.node.type) !== -1) return;
+        if(skipParents.indexOf(parentType) !== -1) return;
+
+        if(parentType === 'CallExpression') {
+            const c = parentPath.get('callee');
+            if(!(c.isMemberExpression()
+                && c.get('object').isIdentifier({ name : 'Object' })
+                && c.get('property').isIdentifier({ name : 'defineProperty' })
+            )) {
+                return;
+            }
+        }
 
         if (node.name === 'exports' && !scope.getBinding('exports')) {
             this.hasExports = true;

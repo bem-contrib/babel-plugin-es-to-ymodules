@@ -50,7 +50,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 "
 `;
 
-exports[`es-to-ymodules Skip BinaryExpression exports: Skip BinaryExpression exports 1`] = `
+exports[`es-to-ymodules Skip exports in BinaryExpression: Skip exports in BinaryExpression 1`] = `
 "
 exports === 10
 
@@ -62,7 +62,19 @@ exports === 10;
 "
 `;
 
-exports[`es-to-ymodules Skip UnaryExpression exports: Skip UnaryExpression exports 1`] = `
+exports[`es-to-ymodules Skip exports in Object.definePropery: Skip exports in Object.definePropery 1`] = `
+"
+Object.definePropery(exports)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+\\"use strict\\";
+
+Object.definePropery(exports);
+"
+`;
+
+exports[`es-to-ymodules Skip exports in UnaryExpression: Skip exports in UnaryExpression 1`] = `
 "
 typeof exports
 

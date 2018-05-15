@@ -24,13 +24,18 @@ pluginTester({
             snapshot : true
         },
         {
-            title : 'Skip UnaryExpression exports',
+            title : 'Skip exports in UnaryExpression',
             code : 'typeof exports',
             snapshot : true
         },
         {
-            title : 'Skip BinaryExpression exports',
+            title : 'Skip exports in BinaryExpression',
             code : 'exports === 10',
+            snapshot : true
+        },
+        {
+            title : 'Skip exports in Object.definePropery',
+            code : 'Object.definePropery(exports)',
             snapshot : true
         },
         {
