@@ -18,5 +18,10 @@ pluginTester({
             code : '/** */\n modules.define',
             snapshot : true
         },
+        {
+            title : 'Patch modules with short arrow',
+            code : `modules.define('a', (p, a) => p(a))`,
+            snapshot : true
+        }
     ]
 });

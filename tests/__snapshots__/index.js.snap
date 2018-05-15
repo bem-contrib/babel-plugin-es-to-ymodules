@@ -13,3 +13,23 @@ exports[`es-to-ymodules No thorw module name error, if plain ymodule: No thorw m
 modules.define;
 "
 `;
+
+exports[`es-to-ymodules Patch modules with short arrow: Patch modules with short arrow 1`] = `
+"
+modules.define('a', (p, a) => p(a))
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+'use strict';
+
+modules.define('a', (p, a) => {
+  a = _extractDefaultValue(a);
+
+  function _extractDefaultValue(obj) {
+    return obj && obj.__esModule ? obj.default : obj;
+  }
+
+  p(a);
+});
+"
+`;

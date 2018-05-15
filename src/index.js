@@ -90,6 +90,11 @@ function patchYm(path) {
 
     if(!args.length) return;
 
+    // For arrow cases: (a) => a
+    if(!t.isBlockStatement(path.node.body)) {
+        path.node.body = t.blockStatement([t.expressionStatement(path.node.body)]);
+    }
+
     path.node.body.body.unshift(getDefTmpl())
 
     args.forEach((arg) => {
