@@ -22,6 +22,16 @@ pluginTester({
             title : 'Patch modules with short arrow',
             code : `modules.define('a', (p, a) => p(a))`,
             snapshot : true
+        },
+        {
+            title : 'Skip UnaryExpression exports',
+            code : 'typeof exports',
+            snapshot : true
+        },
+        {
+            title : 'Skip BinaryExpression exports',
+            code : 'exports === 10',
+            snapshot : true
         }
     ]
 });

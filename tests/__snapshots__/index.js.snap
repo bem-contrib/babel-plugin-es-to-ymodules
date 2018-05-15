@@ -33,3 +33,27 @@ modules.define('a', (p, a) => {
 });
 "
 `;
+
+exports[`es-to-ymodules Skip BinaryExpression exports: Skip BinaryExpression exports 1`] = `
+"
+exports === 10
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+\\"use strict\\";
+
+exports === 10;
+"
+`;
+
+exports[`es-to-ymodules Skip UnaryExpression exports: Skip UnaryExpression exports 1`] = `
+"
+typeof exports
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+\\"use strict\\";
+
+typeof exports;
+"
+`;

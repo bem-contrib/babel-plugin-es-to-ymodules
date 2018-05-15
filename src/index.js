@@ -5,7 +5,12 @@ import transformCommonjs from 'babel-plugin-transform-es2015-modules-commonjs';
 import transform from './transform'
 
 const commonVisitor = {
-    ReferencedIdentifier({ node, scope  }) {
+    ReferencedIdentifier(path) {
+        const { node, scope  } = path;
+
+        const skipParents = ['UnaryExpression', 'BinaryExpression'];
+        if(skipParents.indexOf(path.parentPath.node.type) !== -1) return;
+
         if (node.name === 'exports' && !scope.getBinding('exports')) {
             this.hasExports = true;
         }
